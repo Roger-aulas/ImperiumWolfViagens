@@ -1,0 +1,79 @@
+-- Banco de dados: agencia_viagens
+
+CREATE DATABASE agencia_viagens;
+
+USE agencia_viagens;
+
+-- Tabela: viagens
+CREATE TABLE viagens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    destino VARCHAR(255) NOT NULL,
+    preco DECIMAL(10, 2) NOT NULL,
+    imagem1 VARCHAR(255),
+    imagem2 VARCHAR(255),
+    imagem3 VARCHAR(255)
+);
+
+-- Tabela: clientes
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20) NOT NULL
+);
+
+-- Tabela: reservas
+CREATE TABLE reservas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    id_viagem INT NOT NULL,
+    data_viagem DATE NOT NULL,
+    observacoes TEXT,
+    status VARCHAR(50) DEFAULT 'Pendente', -- Pendente, Confirmada, Cancelada
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+    FOREIGN KEY (id_viagem) REFERENCES viagens(id)
+);
+
+-- Tabela: contatos
+CREATE TABLE contatos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    mensagem TEXT NOT NULL
+);
+
+-- Tabela: redes_sociais
+CREATE TABLE redes_sociais (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL, -- Instagram, Facebook, etc.
+    link VARCHAR(255)
+);
+
+-- Tabela: formas_pagamento
+CREATE TABLE formas_pagamento (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL, -- Cartão de crédito, Boleto, etc.
+    imagem VARCHAR(255) -- Caminho para a imagem da forma de pagamento
+);
+
+-- Inserindo dados de exemplo (viagens):
+INSERT INTO viagens (nome, descricao, destino, preco, imagem1, imagem2, imagem3) VALUES
+('Aventureiro', 'Descrição da viagem aventureira...', 'Machu Picchu', 1999.99, 'img/aventureiro.png', 'img/aventureiros2.png', 'img/aventureiro3.png'),
+('Romântica', 'Descrição da viagem romântica...', 'Paris', 2999.99, 'img/romantica.jpg', 'img/romantica2.png', 'img/romantica3.png'),
+('Luxuosa', 'Descrição da viagem luxuosa...', 'Dubai', 3999.99, 'img/luxuosa.png', 'img/luxuosa2.png', 'img/luxuosa3.png'),
+('Familiar', 'Descrição da viagem familiar...', 'Orlando', 2499.99, 'img/familiar.png', 'img/familiar2.png', 'img/familiar3.png');
+
+-- Inserindo dados de exemplo (formas de pagamento):
+INSERT INTO formas_pagamento (nome, imagem) VALUES
+('Cartão de Crédito', 'img/cartao_credito.png'),
+('Boleto Bancário', 'img/boleto.png'),
+('Pix', 'img/pix.png');
+
+-- Inserindo dados de exemplo (redes sociais):
+INSERT INTO redes_sociais (nome, link) VALUES
+('Instagram', 'https://www.instagram.com/seuinstagram'),
+('Facebook', 'https://www.facebook.com/seufacebook'),
+('Telegram', 'https://t.me/seutelegram'),
+('WhatsApp', 'https://wa.me/5512987654321');
