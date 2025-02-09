@@ -1,0 +1,90 @@
+body {
+    background-color: #a3b3c5;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+.navbar {
+  background-color: #343a40; /* Cor de fundo da navbar */
+}
+
+.navbar-nav .nav-link {
+  color: #fff; /* Cor do texto dos links */
+  margin: 0 5px; /* Espaçamento entre os links */
+  transition: color 0.3s ease; /* Transição suave na cor do texto */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #007bff; /* Cor do texto ao passar o mouse */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Cor do ícone do menu */
+}
+
+/* Estilos para telas menores (responsividade) */
+@media (max-width: 992px) { /* Ponto de quebra do Bootstrap para "lg" */
+  .navbar-nav .nav-link {
+      margin: 5px 0; /* Espaçamento vertical em telas menores */
+      text-align: center; /* Centraliza o texto em telas menores */
+  }
+}
+
+.video-personalizado {
+    width: 300px;
+    height: 200px;
+}
+
+.imagem-padrao {
+    width: 100%; /* Ocupa toda a largura da coluna */
+    height: auto; /* Mantém a proporção */
+    object-fit: cover; /* Preenche o espaço, cortando se necessário */
+    max-height: 300px; /* Altura máxima da imagem (ajuste conforme necessário) */
+}
+
+/* Para ajustar a altura em telas menores, se necessário */
+@media (max-width: 768px) {
+    .imagem-padrao {
+        max-height: 200px; /* Exemplo de ajuste para telas menores */
+    }
+}
+.carousel-item {
+        height: 400px; /* Ajuste este valor para a altura desejada */
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    footer {
+      background-color: #f8f9fa; /* Cor de fundo do rodapé */
+      width: 100%; /* Largura total */
+      margin: 0; /* Remove margens */
+      padding: 20px 0; /* Espaçamento interno */
+  }
+  .carousel-personalizado {
+    width: 800px; /* Largura desejada para o carrossel */
+    margin: 0 auto; /* Centraliza o carrossel */
+}
+
+.carousel-personalizado .carousel-inner {
+    height: 400px; /* Altura desejada para o carrossel */
+}
+
+.carousel-personalizado .carousel-item img {
+    object-fit: cover; /* ou contain, dependendo do efeito desejado */
+    object-position: center; /* Centraliza a imagem */
+    height: 100%; /* Garante que a imagem ocupe toda a altura do carrossel */
+    width: 100%; /* Garante que a imagem ocupe toda a largura do carrossel */
+}
