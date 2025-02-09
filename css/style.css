@@ -1,6 +1,14 @@
 body {
     background-color: #a3b3c5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe a altura total da tela */
 }
+
+.flex-grow-1 { /* Garante que o conteúdo principal cresça para preencher o espaço */
+    flex-grow: 1;
+}
+
 
 .card img {
     height: 200px;
@@ -35,12 +43,6 @@ body {
       text-align: center; /* Centraliza o texto em telas menores */
   }
 }
-
-.video-personalizado {
-    width: 300px;
-    height: 200px;
-}
-
 .imagem-padrao {
     width: 100%; /* Ocupa toda a largura da coluna */
     height: auto; /* Mantém a proporção */
@@ -68,10 +70,12 @@ body {
         transform: translate(-50%, -50%);
     }
     footer {
-      background-color: #f8f9fa; /* Cor de fundo do rodapé */
-      width: 100%; /* Largura total */
-      margin: 0; /* Remove margens */
-      padding: 20px 0; /* Espaçamento interno */
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #f0f0f0;
+      padding: 20px;
+      
   }
   .carousel-personalizado {
     width: 800px; /* Largura desejada para o carrossel */
