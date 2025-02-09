@@ -55,8 +55,7 @@ CREATE TABLE redes_sociais (
 CREATE TABLE formas_pagamento (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL, -- Cartão de crédito, Boleto, etc.
-    imagem VARCHAR(255) -- Caminho para a imagem da forma de pagamento
-);
+    );
 
 -- Inserindo dados de exemplo (viagens):
 INSERT INTO viagens (nome, descricao, destino, preco, imagem1, imagem2, imagem3) VALUES
